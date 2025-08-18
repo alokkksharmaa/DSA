@@ -14,10 +14,11 @@ int EvenSum(int arr[] , int size){
 
 int main()
 {
-   int arr[6] = {3,45,6,1,2,6};
-
-   int size = 6;
+    int arr[] = {3,45,6,1,2,6};
+    
+    int size = sizeof(arr)/sizeof(arr[0]);
 
     cout << "Sum of even elements in an array: " << EvenSum(arr, size) << endl;
+
 return 0;
 }

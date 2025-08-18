@@ -19,7 +19,7 @@ int main()
     // cout << "Value at index 79 " <<  array[78] <<  endl;
 
     // int array[26] = {3, 5, 1, 7, 44};
-    // int n = 26;
+    // int n = 26;      
     // printArray(array, n);
 
 

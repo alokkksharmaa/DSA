@@ -23,6 +23,6 @@ int main()
         cin >> arr[i];
     }
     cout << "Sum of element of array is: " << Sum(arr, size) << endl;
-
+    
     return 0;
 }
