@@ -83,9 +83,9 @@ int Occurrence(int arr[], int size, int key, bool findFirst) {
         if (arr[mid] == key) {
             ans = mid;
             if (findFirst) {
-                e = mid - 1;   // keep searching left for first
+                e = mid - 1;  
             } else {
-                s = mid + 1;   // keep searching right for last
+                s = mid + 1;  
             }
         }
         else if (key > arr[mid]) {
@@ -97,6 +97,7 @@ int Occurrence(int arr[], int size, int key, bool findFirst) {
     }
     return ans;
 }
+
 int main() {
     int even[] = {2,3,3,3,3,3,3,3,3,3,3,3,5,6,7};
     int size = sizeof(even) / sizeof(even[0]);
@@ -106,6 +107,5 @@ int main() {
 
     cout << "Last Occurrence of 3 is at Index "
          << Occurrence(even, size, 3, false) << endl;
-
     return 0;
 }

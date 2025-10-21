@@ -27,7 +27,7 @@ int BinarySearch(int arr[], int size, int key)
     }
     return -1;
 }
-
+            
 int main()
 {
     int odd[6] = {2, 3, 6, 8, 9, 12};

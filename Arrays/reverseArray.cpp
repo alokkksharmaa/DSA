@@ -21,7 +21,6 @@ int PrintArray(int arr[], int n)
     }
     cout << endl;
 }
-
 int main()
 {
     int arr[6] = {8, 3, 5, 2, 6, 1};
