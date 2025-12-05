@@ -16,7 +16,7 @@ public:
     }
 
     void printAdjList() {
-        for (auto &i : adj) {
+        for (auto i : adj) {
             cout << i.first << " -> ";
             for (auto &j : i.second) {
                 cout << j << " ";
