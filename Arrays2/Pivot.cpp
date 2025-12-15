@@ -7,7 +7,7 @@ int findPivot(int arr[], int n)
     int end = n - 1;
 
     while (s <= end)
-    {
+    {   
         int mid = s + (end - s) / 2;
         if (arr[mid] >= arr[0])
         {
