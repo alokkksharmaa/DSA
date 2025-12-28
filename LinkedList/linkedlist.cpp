@@ -4,15 +4,20 @@ using namespace std;
 class Node
 {
 public:
-  int val;
+  int value;
   Node *next;
+
+  // Node(int value){
+  //   this -> value = value;
+  //   this -> next =  NULL;
+  // }
 };
 
-void PrintList(Node *n)
+void printList(Node *n)
 {
   while (n != 0)
   {
-    cout << n->val << " ";
+    cout << n->value << " " << endl;
     n = n->next;
   }
 }
@@ -24,14 +29,14 @@ int main()
   Node *second = new Node();
   Node *third = new Node();
 
-  head->val = 1;
+  head->value = 1;
   head->next = second;
-  second->val = 3;
-  second->next = third;
-  third->val = 4;
-  third->next = NULL;
+  second->value = 3;
+  head->next = third;
+  second->value = 5;
+  head->next = NULL;
 
-  PrintList(head);
+  printList(head);
 
   return 0;
 }
