@@ -27,7 +27,6 @@ vector <vector <int>> MergeIntervals(vector<vector <int>> &intervals, int n){
   return res;
 };
 
-
 int main()
 {
   vector<vector<int>> intervals = {
