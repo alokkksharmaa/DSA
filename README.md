@@ -4,24 +4,6 @@
 This repository contains my implementation of key Data Structures and Algorithms in C++.  
 Each file focuses on a specific concept with clean, understandable code.
 
-## Contents
-
-- Arrays
-  - Linear Search
-  - Reverse Array
-  - Sum of Elements
-- Sorting Algorithms
-  - Bubble Sort
-  - Selection Sort
-  - Insertion Sort
-- Searching Algorithms
-  - Binary Search
-- Recursion
-  - Factorial
-  - Fibonacci
-- Others
-  - Will be added as I progress
-
 ## Purpose
 
 - Strengthen DSA fundamentals
