@@ -20,7 +20,7 @@ void InsertAtHead(Node *&head, int data)
   Node *temp = new Node(data);  //creates new node
   temp->next = head;            //arrow to old head
   head = temp;                  //move head to new node
-}
+};
 
 void insertAtTail(Node* &tail, int data){
   Node* temp = new Node(data);

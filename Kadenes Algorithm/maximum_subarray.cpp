@@ -12,7 +12,7 @@ int MaxmumSubArray(int *arr, int n){
     best_so_far = max(best_ending, best_so_far);
   }
   return best_so_far;
-}
+};
 
 int main(){
   int arr[] = {2, 3, 4, -3, -1, 6, -2, 1, -1, 3};
