@@ -20,9 +20,8 @@ int CountNodes(Node* head){
 
   Node* current = head;
   while(current != nullptr){
-    count++;
-
     current = current -> next;
+    count++;
   }
   return count;
 }

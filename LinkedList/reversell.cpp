@@ -17,6 +17,16 @@ public:
 Node *reverseList(Node *head) {
 
   Node *curr = head, *prev = nullptr, *next;
+
+  while(curr != nullptr){
+    // Node* next = curr -> next;
+    next = curr -> next;
+
+    curr -> next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
 }
 
 void printList(Node *head)

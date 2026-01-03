@@ -14,22 +14,62 @@ public:
   };
 };
 
-void InsertAtHead(Node *&head, int data)
+void insertAthead(Node *&head, int data)
 {
+  Node *temp = new Node(data);
+  temp->next = head;
+  head = temp;
+}
 
-  Node *temp = new Node(data);  //creates new node
-  temp->next = head;            //arrow to old head
-  head = temp;                  //move head to new node
-};
-
-void insertAtTail(Node* &tail, int data){
-  Node* temp = new Node(data);
-  tail -> next = temp;
+void insertAtTail(Node *&tail, int data)
+{
+  Node *temp = new Node(data);
+  tail->next = temp;
   tail = temp;
 }
 
-void Print(Node *&head)
+// Insert a Node after a given Node in Linked List
+// Input: LinkedList = 2 -> 3 -> 4 -> 5, newData = 1, key = 2
+// Output: LinkedList = 2 -> 1 -> 3 -> 4 -> 5
+Node *insertAfter(Node *&head, int key, int newData)
+{
+
+  Node *curr = head;
+
+  while (curr != nullptr)
   {
+    if (curr->data == key)
+    {
+      break;
+      curr = curr->next;
+    }
+  }
+
+  // if curr becomes NULL means, given key is not
+  // found in linked list
+  if (curr == nullptr)
+  {
+    cout << "Node not found" << endl;
+    // Return the head of the original linked list
+    return head;
+  }
+
+  // Allocate new node and make the element to be inserted
+  // as a new node
+  Node *newNode = new Node(newData);
+
+  // Set the next pointer of new node to the next pointer of given node
+  newNode->next = curr->next;
+
+  // Change the next pointer of given node to the new node
+  curr->next = newNode;
+
+  // Return the head of the modified linked list
+  return head;
+}
+
+void Print(Node *&head)
+{
   Node *temp = head; // start from head
 
   while (temp != NULL)
@@ -41,16 +81,17 @@ void Print(Node *&head)
 };
 int main()
 {
-  Node *head = NULL;  //empty train, no carriages
-  Node *tail = NULL;  // we'll add tail later
-  
-  InsertAtHead(head, 10);   //Creates [10 | NULL]
-  Print(head);
-  InsertAtHead(head, 34);
-  Print(head);
-  InsertAtHead(head, 57);
-  Print(head);
+  Node *head = NULL; // empty train, no carriages
+  Node *tail = NULL; // we'll add tail later
 
+  insertAthead(head, 10); // Creates [10 | NULL]
+  Print(head);
+  insertAthead(head, 34);
+  Print(head);
+  insertAthead(head, 57);
+  Print(head);
+  insertAtTail(tail, 30);
+  Print(head);
 
   return 0;
 }
