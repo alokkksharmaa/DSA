@@ -36,7 +36,5 @@ int main()
   cout << *t++ << endl;
 
 
-  
-
   return 0;
 };
