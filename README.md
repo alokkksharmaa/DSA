@@ -3,6 +3,7 @@
 ---
 This repository contains my implementation of key Data Structures and Algorithms in C++.  
 Each file focuses on a specific concept with clean, understandable code.
+Include Advanced Topics
 
 ## Purpose
 
@@ -18,7 +19,7 @@ Each file focuses on a specific concept with clean, understandable code.
 ---
 
 **Note**: This repo is for personal learning and growth.  
-Code may be brute forced ||  optimized or refactored over time as I level up, Contributions welcome.!!
+Code may be brute forced ||  optimized or refactored over time as I level up, Contributions welcome.!
 
 ---
 
