@@ -14,11 +14,10 @@ public:
   }
 };
 
-int CountNodes(Node* head){
+int CountNodes(Node *head){
   int count = 0;
-  // for(;head; head = head -> next) count++;
 
-  Node* current = head;
+  Node *current = head;
   while(current != nullptr){
     current = current -> next;
     count++;
@@ -26,8 +25,7 @@ int CountNodes(Node* head){
   return count;
 }
 
-    void
-    Print(Node *&head)
+void Print(Node *&head)
 {
   Node *temp = head;
 

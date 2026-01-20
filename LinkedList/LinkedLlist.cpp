@@ -21,15 +21,15 @@ void insertAthead(Node *&head, int data)
   head = temp;
 }
 
-void insertAtTail(Node *&tail, int data)
-{
-  Node *temp = new Node(data);
-  tail->next = temp;
-  tail = temp;
-}
+void insertAtTail(Node *&tail, int data){
+    Node *temp = new Node(data);
+    tail->next = temp;
+    tail = temp;
+};
 
 // Insert a Node after a given Node in Linked List
 // Input: LinkedList = 2 -> 3 -> 4 -> 5, newData = 1, key = 2
+
 // Output: LinkedList = 2 -> 1 -> 3 -> 4 -> 5
 Node *insertAfter(Node *&head, int key, int newData)
 {
