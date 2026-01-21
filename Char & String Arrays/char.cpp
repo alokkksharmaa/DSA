@@ -1,18 +1,15 @@
 #include <iostream>
+#include <string>
 using namespace std;
-
-
-// In char array if we press space , tab  or enter b/w two character,
-//  It terminates the 2nd one
 
 int main()
 {
+
   char name[20];
-
   cout << "Enter your name: ";
-  cin >> name;
+  cin >> name;   
 
-  cout << "Your Name is: " << name <<  endl;
-  
+  cout << "Your name is: "<< name ;
+
   return 0;
-};
+}
