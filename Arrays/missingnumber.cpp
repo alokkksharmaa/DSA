@@ -16,7 +16,7 @@ int MissingNumber(int nums[], int n)
 
 int main()
 {
-  int nums[] = {1, 3, 4};
+  int nums[] = {1, 3, 4};   //output == 2;
   int n = sizeof(nums) / sizeof(nums[0]);
 
   cout << MissingNumber(nums, n) << endl;
