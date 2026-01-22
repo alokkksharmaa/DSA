@@ -22,10 +22,7 @@ Node* addTwoList(Node* &head, int data){
       prev = curr;
       curr = next;
   }
-  return prev;
-
-  
-  
+  return prev; 
 }
  
 int main()
