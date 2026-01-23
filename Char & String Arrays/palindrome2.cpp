@@ -2,39 +2,35 @@
 using namespace std;
 
 bool palindrome(char ch[]){
-  string s = ch;
-  string  clean;
-  for(char c : s){
-    if(isalnum(c)){
-      clean += tolower(c);
-    }
-  };
 
-  int start = 0;
-  int end   = size(s)-1;
-  
-  while(start < end)
-  if(clean[start] != clean[end]) return false;
-    start++;
-    end--;
-  return false;
+  int left  = 0;
+  int right = strlen(ch)-1; 
+
+  while(left < right){
+    while(left < right && !isalnum(ch[left])) left++;
+    while(left < right && !isalnum(ch[right])) right--;
+    
+    if(tolower(ch[left]) != tolower(ch[right]))  return false;
+    
+    left++;
+    right--;
+  }
+  return true;
 }
 
-
-
-int main()
-{
-
+int main() {
   char ch[120];
-  cout <<"Enter your name: " ;
-  cin >> ch;
-  cin.getline(ch, 100);
+  cout << "Enter your name: ";
+  cin.getline(ch, 120);
 
   if(palindrome(ch)){
-    cout << "Is Palindrome";
-  }else{
-    cout << "Not Palindrome";
+      cout << "Is Palindrome";
+  } else {
+      cout << "Not Palindrome";
   }
 
   return 0;
 }
+
+
+
