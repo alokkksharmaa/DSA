@@ -1,35 +1,39 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-bool palindrome(char s[]){
-  string t = s;
-  string clean;
-  for(char c : t){
+bool palindrome(char ch[]){
+  string s = ch;
+  string  clean;
+  for(char c : s){
     if(isalnum(c)){
       clean += tolower(c);
     }
-  }
+  };
 
   int start = 0;
-  int end   =  clean.size()-1;
-
-  while(start < end){
-    if(clean[start] != clean[end]) return false;
+  int end   = size(s)-1;
+  
+  while(start < end)
+  if(clean[start] != clean[end]) return false;
     start++;
     end--;
-  }
-  return true;
+  return false;
 }
 
-int main(){
-  char s[100];
-  cout << "Enter a string" << endl;
-  cin.getline(s, 100);
 
-  if(palindrome(s)){
-      cout << "Palindrome" << endl;
-  } else {
-      cout << "Not a Palindrome" << endl;
+
+int main()
+{
+
+  char ch[120];
+  cout <<"Enter your name: " ;
+  cin >> ch;
+  cin.getline(ch, 100);
+
+  if(palindrome(ch)){
+    cout << "Is Palindrome";
+  }else{
+    cout << "Not Palindrome";
   }
 
   return 0;
