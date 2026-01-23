@@ -2,7 +2,6 @@
 using namespace std;
 
 bool isPanagram(string &word){
-
   for(char ch = 'a'; ch <= 'z'; ch++){  
     bool found = false;
 
