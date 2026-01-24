@@ -10,13 +10,11 @@ bool isPanagram(string &word){
           found = true;
           break;
         }
-    } 
-
-    if(found == false) return false;
+      if(found == false) return false;
   }
+}
   return true;
 }
-
 
 int main()
 {
