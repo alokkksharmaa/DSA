@@ -1,23 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-  vector <int> arr ={2,7,6, 3};
-  int target = 9;
+int twoSum(vector <int> &arr, int target){
+  unordered_map <int, int> mp;
 
-  unordered_map <int , int> mp;  //value -> index
-  
-  for(int i=0; i<arr.size();i++){
+  for(int i=0; i<arr.size(); i++){
     int need = target - arr[i];
-    
-      if(mp.count(need)){
-        cout << mp[need] << " " << i << "\n";
-        return 0;
-      }
-      mp[arr[i]] = i;
+
+    if(mp.count(need)){
+      cout << "Found pair in indices: " << mp[need] << " and " << i << endl;
+       return {mp[need]};
+    }
+    mp[arr[i]] = i;
   }
-  
-  
-  return 0;
+  return {};
+}
+
+int main(){
+  vector <int> arr = {8,2,5,2,6,7,3};
+  int target = 8;
+
+  twoSum(arr, target);
+
 }
