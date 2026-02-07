@@ -1,28 +1,30 @@
 #include <iostream>
-#include <vector>
+#include <list>
 #include <stack>
+
 using namespace std;
 
 class Stack{
-  vector <int> v;
+  list<int> ll;
   public:
 
   void push(int val){
-    v.push_back(val);
-  };
+    ll.push_front(val);
+  }
 
-  void pop(){
-    v.pop_back();
-  };
+  int top() {
+    return ll.front();
+  }
 
-  int top(){ //0(1)
-    return v[v.size()-1];
+  int pop(){
+    ll.pop_back(); 
   }
 
   bool empty(){
-    return v.size() == 0;
-  };
+    return ll.size() == 0;
+  }
 };
+
 
 int main()
 {
