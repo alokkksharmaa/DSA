@@ -31,12 +31,11 @@ vector <vector <int>>  threeSum(vector<int> &nums){
     }
   }
   return ans;
-
 };
 
 
-int main()
-{
+int main(){
+  
   vector<int> nums = {-1, 0, 1, 2, -1, -4};
 
 
