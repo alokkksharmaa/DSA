@@ -33,5 +33,7 @@ int main()
   }
   cout << endl;
 
+  // output == 1 1 1 2 1 4 6
+
   return 0;
 }
