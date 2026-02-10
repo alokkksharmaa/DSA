@@ -1,41 +1,42 @@
-#include <iostream>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 
 bool isValid(string s)
 {
+  if (s.length() <= 1)
+    return false;
+
   stack<char> st;
 
-  for(int i = 0; i<s.size() ; i++)
+  for (int i = 0; i < s.size(); i++)
   {
-    if(s[i] == '(' || s[i] == '[' || s[i] == '{')
+    if (st.empty() &&
+            s[i] == '(' ||
+        s[i] == '{' || s[i] == '[')
     {
       st.push(s[i]);
     }
     else
     {
-      if(st.empty())
+      if (st.empty())
         return false;
-      char c = st.top();
-      st.pop();
-      if((s[i] == ')' && c != '(') ||
-        (s[i] == ']' && c != '[') || 
-        (s[i] == '}' && c != '{'))
+
+      if (s[i] == ')' && st.top() == '(' ||
+          s[i] == '}' && st.top() == '{' ||
+          s[i] == ']' && st.top() == '[')
+      {
+        st.pop();
+      }else{
         return false;
+      }
     }
   }
   return st.empty();
 }
 
-
 int main()
 {
-  string s = "({[]})";
-  if(isValid(s))
-    cout << "Valid Parenthesis" << endl;
-  else
-    cout << "Invalid Parenthesis" << endl;
-    
-
-  return 0;
+  string s;
+  getline(cin, s);
+  cout << isValid(s);
 }
