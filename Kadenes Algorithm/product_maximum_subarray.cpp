@@ -22,7 +22,7 @@ int MaximumSubArray(int arr[], int n){
 
 int main()
 {
-  int arr[] = {-2,3,-4};
+  int arr[] = {-2,3,-4,6,-9,-2,-5,2,4,2};
   int n =  sizeof(arr)/sizeof(arr[0]);
 
   int product = MaximumSubArray(arr,n);
