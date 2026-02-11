@@ -1,26 +1,49 @@
-#include <iostream>
-#include <vector>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-  vector <int> arr = {6 , 8, 0 , 1 , 3};
-  
-  stack  <int> st;
-  vector <int> nextGreater(arr.size(), -1);
 
-  for(int i=0;i<arr.size(); i--){
-    while(st.size() > 0 && arr[st.top()] < arr[i]){
-      nextGreater[st.top()] = arr[i];
-      st.pop();
+  int arr[] = {1, 3, 2, 4};
+  int n = sizeof(arr) / sizeof(arr[0]);
+
+  stack<int> st;
+  vector<int> v;
+
+  for (int i = n - 1; i >= 0; i--)
+  {
+    if (st.empty())
+    {
+      v.push_back(-1);
     }
-    st.push(i);
+    else if (st.size() > 0 && st.top() > arr[i])
+    {
+      v.push_back(st.top());
+    }
+    else if (st.size() > 0 && st.top() < arr[i])
+    {
+      while (st.size() > 0 && st.top() < arr[i])
+      {
+        st.pop();
+      }
+      if (st.empty())
+      {
+        v.push_back(-1);
+      }
+      else
+      {
+        v.push_back(st.top());
+      }
+    }
+    st.push(arr[i]);
   }
-  for(int i=0; i<nextGreater.size(); i++){
-    cout << nextGreater[i] << " ";
+
+  reverse(v.begin(), v.end());
+
+  for (auto x : v)
+  {
+    cout << x << ' ';
   }
-  cout << endl;
 
   return 0;
-}
+};

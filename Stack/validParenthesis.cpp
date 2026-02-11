@@ -3,8 +3,9 @@ using namespace std;
 
 bool isValid(string s)
 {
-  if (s.length() <= 1)
-    return false;
+  if (s.length() <= 1){
+  return false;
+  }
 
   stack<char> st;
 
