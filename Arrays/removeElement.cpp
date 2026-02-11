@@ -18,6 +18,7 @@ int main()
   int k = 2;
 
   vector <int> print =  RemoveElements(nums, size, k);
+  // output == 4, 8, 1
 
   for(int x: print){
     cout << x << " ";

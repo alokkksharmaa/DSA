@@ -3,7 +3,7 @@ using namespace std;
 
 int printLargestRowSum(int arr[][4], int rows, int cols){
 
-  int maxSum = INT32_MIN;  // start very low
+  int maxSum = INT_MIN;  // start very low
   int rowIndex = -1;
 
     for(int i=0; i<3; i++){
