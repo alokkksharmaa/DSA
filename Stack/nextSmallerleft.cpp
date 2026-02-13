@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void nextgreaterleft(int *arr, int n){
+void nextgreaterleft(int *arr, int n)
+{
   stack<int> st;
   vector<int> v;
 
@@ -39,7 +40,6 @@ void nextgreaterleft(int *arr, int n){
   {
     cout << x << ',';
   }
-
 };
 
 int main()
