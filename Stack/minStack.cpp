@@ -11,7 +11,6 @@ public:
         if(st.empty() || val <= st.top())
             st.push(val);
     }
-
     void pop(){
         if(s.top() == st.top())
             st.pop();
