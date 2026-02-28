@@ -14,10 +14,5 @@
 
   cout << "Address of *arr is:  "<< *(arr + 1)<< endl;
 
-  
-
-
-
-  
   return 0;
  };
