@@ -1,21 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int fun(int n)
-{
-  if (n == 1)
-    return 1; // base case
+int printN(int n){
 
-  int ans = fun(n - 1); // recursive case
+  if(n == 0) return 0;
 
-  return ans + n;
+  int s = printN(n-1);
+
+  int m =  n ;
+  return s + n;
 }
 
 int main()
 {
   int n;
-  cout << "Enter number";
+  cout << "Enter a number to print sum: " << endl;
   cin >> n;
 
-  cout << fun(n) << endl;
+  cout << printN(n);
+
+  return 0;
 }
