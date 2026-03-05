@@ -7,7 +7,6 @@ int printN(int n){
 
   int s = printN(n-1);
 
-  int m =  n ;
   return s + n;
 }
 
