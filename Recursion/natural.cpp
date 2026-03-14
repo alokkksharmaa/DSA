@@ -1,25 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int printN(int n)
+void printn(int n)
 {
-
   if (n == 0)
-    return 0;
+    return;
 
-  cout << n << endl;
+    cout << n << " ";   // n to 1
 
-  printN(n - 1);
+  printn(n - 1);
 
+  cout << n << " ";  /// 1 to n
 }
-
 int main()
 {
   int n;
-  cout << "Enter a number to print " << endl;
+  cout << "Enter n";
   cin >> n;
 
-  cout << printN(n);
+  printn(n);
 
   return 0;
 }
