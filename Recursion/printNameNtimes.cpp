@@ -1,23 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void func(int n, string name)
-{
+int func(int n , string name){
 
-  if (n <= 0) return;
+  if ( n <=  0) return;
 
-  cout << name << endl;
-  func(n - 1, name);
+  cout << name << endl; 
+
+  func(n-1, name);
 }
 
 int main()
 {
-  int n;
+  int n = 0;
   cout << "Enter n" << endl;
-  cin >> n;
+  cin  >> n;
 
   string name = "Alok";
-
+  
   func(n, name);
   return 0;
 }
