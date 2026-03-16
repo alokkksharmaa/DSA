@@ -12,8 +12,6 @@ int main()
   int k = 3;
   int n = 5;
 
-
-
     
   return 0;
 }
