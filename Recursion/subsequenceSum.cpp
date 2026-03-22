@@ -16,8 +16,7 @@ void subsequenceSum(int arr[], int index, int solution, int sum){
 int main()
 {
   int arr[] = {1,2,1,0};
-
+  int  n = sizeof(arr)/sizeof(arr[0]);
   
-    
   return 0;
 }
