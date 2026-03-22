@@ -11,7 +11,7 @@ void subsequenceSum(int arr[], int index, int solution, int sum){
   };
 
   subsequenceSum(arr, index+1, solution, sum);
-}
+};
 
 int main()
 {
