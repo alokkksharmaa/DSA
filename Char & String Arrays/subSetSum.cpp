@@ -14,11 +14,12 @@ void generateSubSetSum(int index, int currentSum, const int arr[],
     return;
   }
 
-  generateSubSetSum(index + 1, currentSum , arr, n , subsetSum);
-
 
   generateSubSetSum(index + 1, currentSum + arr[index] , arr, n , subsetSum);
+ 
+  // just swap the recursion order for by default ascending order. 
 
+  generateSubSetSum(index + 1, currentSum , arr, n , subsetSum);
 
 }
 
