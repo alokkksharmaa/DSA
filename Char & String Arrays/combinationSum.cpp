@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 void findCombination(vector<int> &arr, int target, int index,
@@ -20,7 +19,7 @@ void findCombination(vector<int> &arr, int target, int index,
   if (arr[index] <= target) // if index of arr <= taret means 4 < 7
   {
     v.push_back(arr[index]);
-                         // 7   -  2  = 5 
+                           // 7   -  2  = 5
     findCombination(arr, target - arr[index], index, ans, v);
     v.pop_back();
   };
