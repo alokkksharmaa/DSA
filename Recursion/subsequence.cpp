@@ -13,7 +13,8 @@ void subsequences(string s, int index, string output){
     return;
   }
 
-  // took 
+
+  // took  the entire elements 
   subsequences(s, index+1, output + s[index]);
 
   subsequences(s, index + 1, output);
