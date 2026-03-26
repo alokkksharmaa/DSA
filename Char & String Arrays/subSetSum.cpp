@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void generateSubSetSum(int index, int currentSum, const int arr[],
+void generateSubSetSum(const int  arr[], int currentSum, int index,
                         int n, vector<int>&subsetSum)
 {
 
@@ -15,11 +15,11 @@ void generateSubSetSum(int index, int currentSum, const int arr[],
   }
 
 
-  generateSubSetSum(index + 1, currentSum + arr[index] , arr, n , subsetSum);
+  generateSubSetSum(arr, currentSum + arr[index] , index+1, n , subsetSum);
  
   // just swap the recursion order for by default ascending order. 
 
-  generateSubSetSum(index + 1, currentSum , arr, n , subsetSum);
+  generateSubSetSum(arr, currentSum , index + 1, n , subsetSum);
 
 }
 
@@ -30,7 +30,7 @@ int main()
 
   vector<int> subSetSum;
 
-  generateSubSetSum(0, 0, arr, n , subSetSum);
+  generateSubSetSum(arr, 0, 0, n , subSetSum);
 
   // sort(subSetSum.begin(), subSetSum.end());
 
