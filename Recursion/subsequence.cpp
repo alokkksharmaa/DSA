@@ -11,7 +11,7 @@ void subsequences(string s, int index, string output){
   if(index == s.length()){
     cout << ""<<  output << "";
     return;
-  }
+  };
 
 
   // took  the entire elements 
