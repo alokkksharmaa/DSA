@@ -12,7 +12,8 @@ void getPermutation(char *a, int left, int right) {
     int i;
     if(left == right){
       cout << a << endl;
-    }else{
+    }
+    else{
       for(int i= left; i <= right; i++){
         swapchar((a + left), (a + i));     
         getPermutation(a, left+1, right);
