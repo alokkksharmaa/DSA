@@ -1,7 +1,7 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-void swap(char *x , char *y) {
+void swapchar(char *x , char *y) {
     char temp;
     temp = *x;
     *x = *y;
@@ -14,9 +14,9 @@ void getPermutation(char *a, int left, int right) {
       cout << a << endl;
     }else{
       for(int i= left; i <= right; i++){
-        swap( (a+left), a[right]);
+        swapchar((a + left), (a + i));     
         getPermutation(a, left+1, right);
-        swap((a+left), (a+i));
+        swapchar((a + left), (a + i));   
       }
     }
 }
