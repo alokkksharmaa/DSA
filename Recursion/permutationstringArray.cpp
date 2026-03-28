@@ -1,6 +1,4 @@
-#include <vector>
-#include <algorithm>
-#include <iostream>
+#include <bits/stdc++.h> 
 using namespace std;
 
 void swap(char *x , char *y) {
@@ -10,14 +8,16 @@ void swap(char *x , char *y) {
     *y = temp;
 };
 
-void getPermutation( ) {
-  
+void getPermutation(char *a, int l, int r) {
+
+    
 }
 int main()
 {
+  char str[] = "ABC"; 
+	int n = strlen(str);
   
 
-  
         
   
   return 0;
