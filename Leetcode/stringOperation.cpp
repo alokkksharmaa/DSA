@@ -16,6 +16,8 @@ int main()
 
   if(!canBeEqual(s1, s2)){
     cout << "Cannot be equal"<< endl; 
+  }else{
+    cout << "Can be equal" << endl;
   }
     
   return 0;
