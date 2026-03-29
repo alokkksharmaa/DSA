@@ -14,7 +14,9 @@ int main()
   string s1 = "abcd";
   string s2 = "cdab";
 
-  canBeEqual(s1, s2);
+  if(!canBeEqual(s1, s2)){
+    cout << "Cannot be equal"<< endl; 
+  }
     
   return 0;
 }
