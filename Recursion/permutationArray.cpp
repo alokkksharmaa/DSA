@@ -9,6 +9,9 @@ void helper(vector<int>&arr, int index, vector<vector<int>>&ans){
     return;
   };
 
+  // n! = n!/(n-r)!r! 
+  // ex :- n = 3 -> 3! = 3*2*1 = 6 
+
   for(int j = index ; j<arr.size();j++){
     swap(arr[index], arr[j]);
     helper(arr, index+1, ans);
