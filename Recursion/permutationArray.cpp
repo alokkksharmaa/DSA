@@ -1,5 +1,4 @@
-#include <vector>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void helper(vector<int>&arr, int index, vector<vector<int>>&ans){
@@ -8,7 +7,7 @@ void helper(vector<int>&arr, int index, vector<vector<int>>&ans){
   if(index >= arr.size()){
     ans.push_back(arr);
     return;
-  }
+  };
 
   for(int j = index ; j<arr.size();j++){
     swap(arr[index], arr[j]);
