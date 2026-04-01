@@ -23,11 +23,12 @@ class  Solution {
   };
 
   vector<vector<int>> palindrome(vector<int> arr){
-    
+
     vector<vector<int>> ans;
     
     helper(arr, 0, ans);
 
     return ans;
+  }
   
 };
