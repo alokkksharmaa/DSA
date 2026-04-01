@@ -20,12 +20,7 @@ int main()
   int arr[] = {2, 5, 1, 7, 3};
   int n = 5;
 
-  if(!isSorted(arr, n)){
-    cout << " Array is Not sorted!";
-  }else{
-    cout << "Sorted Array";
-  };
-  cout << endl;
+  cout << (isSorted(arr, n)  ?  "Sorted Array" : "Array is not Sorted yet") << endl;
 
       return 0;
 }
