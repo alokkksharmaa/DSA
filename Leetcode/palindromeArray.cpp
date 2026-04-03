@@ -4,7 +4,9 @@ using namespace std;
 class Solution
 {
 public:
-  void helper(vector<int>&arr, int index, vector<vector<int>> &ans)
+  void helper(vector<int>&arr, 
+              int index,
+              vector<vector<int>> &ans)
   {
 
     // base case
