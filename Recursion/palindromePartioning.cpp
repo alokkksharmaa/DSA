@@ -1,26 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isPalindrome(string &s, int start, int end){
-    while(start <= end){
-        if(s[start++] != s[end--]) return false;
+// Given a string s, partition s such that every substring of the partition is a palindrome.
+// Return all possible palindrome partitioning of s.
+
+bool isPalindrome(string&s, int start, int end)
+{
+
+    while (start <= end)
+    {
+        if (s[start++] != s[end--]) return false;
     }
     return true;
 }
 
-void helper(string &s, int index,
-            vector<string> &path,
-            vector<vector<string>> &res){
+void helper(string&s, int index, vector<string>&path,  vector<vector<string>> &res){
 
     if(index == s.size()){
         res.push_back(path);
         return;
     }
 
-    for(int i = index; i < s.size(); i++){
+    for(int i = index; i< s.length(); ++i){
         if(isPalindrome(s, index, i)){
-            path.push_back(s.substr(index, i - index + 1));
-            helper(s, i + 1, path, res);
+            path.push_back(s.substr(index, i-index+1));
+            helper(s, index+1, path , res);
             path.pop_back();
         }
     }
@@ -28,18 +32,21 @@ void helper(string &s, int index,
 
 int main(){
 
-    string s = "aab";
+    string s  = "aab";
 
-    vector<vector<string>> res;
     vector<string> path;
+    vector<vector<string>> res;
+
 
     helper(s, 0, path, res);
 
     for(auto x : res){
-      for(string print : x){
-        cout << print <<  " " ;
-      }
-    }
+        for(auto print : x) {
+            cout << print << " ";
+        }
+        cout << endl;
+    };
+
 
     return 0;
 }
