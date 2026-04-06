@@ -34,6 +34,9 @@ int main(){
 
     string s  = "aab";
 
+    // output :- a a b 
+    //           aa a b 
+
     vector<string> path;
     vector<vector<string>> res;
 
