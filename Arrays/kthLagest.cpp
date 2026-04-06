@@ -1,13 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int kthLargest(int arr[], int n, int k){
 
-  sort(arr , arr + n );
 
-  return arr[n-k];
-
-};
 
 int main()
 {
@@ -19,7 +14,7 @@ int main()
 
   cout << n;
   cout << endl;
-  cout << kthLargest(arr, n , k) << endl;
+  // cout << kthLargest(arr, n , k) << endl;
 
   return 0;
 }
