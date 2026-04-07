@@ -13,34 +13,31 @@ using namespace std;
 //   return arr[n - k];
 // };
 
-
-
-
-
 // [Expected Approach] Using Priority Queue(Min-Heap) - O(n * log(K)) time and O(K) space
-int kthLargest(int arr[], int n, int k){
+int kthLargest(int arr[], int n, int k)
+{
 
-  priority_queue<int , vector<int>, greater<int>> pq;
+  priority_queue<int, vector<int>, greater<int>> pq;
 
-  for(int i=0;i<n;i++){
+  for (int i = 0; i < n; i++)
+  {
 
     sort(arr, arr + n);
     pq.push(arr[i]);
 
-
-    if(pq.size() > k){
+    if (pq.size() > k)
+    {
 
       pq.pop();
-    
     }
+     
   }
-  
 
   return pq.top();
-
 }
 
-int main(){
+int main()
+{
 
   int arr[] = {1, 2, 3, 4, 5, 6};
   int n = sizeof(arr) / sizeof(arr[0]);
