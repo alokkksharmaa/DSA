@@ -3,6 +3,9 @@ using namespace std;
 
 // 
 
+void nQueens(){
+
+};
 
 int main() {
 
