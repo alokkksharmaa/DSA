@@ -10,24 +10,52 @@ using namespace std;
 // if second > n
 // return first;
 
-int majorityElement(int nums[], int n) {
+// int majorityElement(int nums[], int n) {
 
-  unordered_map<int, int> mp;
+//   unordered_map<int, int> mp;
 
-  for(int i=0; i<n; i++){
-    mp[nums[i]]++;
+//   for(int i=0; i<n; i++){
+//     mp[nums[i]]++;
+//   };
+
+
+//   n = n/2;
+
+//   for( auto x : mp ){
+
+//     if( x.first > n ){
+//       return x.second;
+//     }
+//   }
+// };
+
+
+
+// Boyer-Moore Voting Algorithm 
+
+int majorityElement( int nums[],  int n ){
+  
+  int candidate = 0;
+  int count  = 0;
+
+  for( int i = 0; i < n; i++ ){
+
+      int num = nums[i];
+      
+      if( count == 0 ){
+        candidate = num;
+      }
+
+      if( num == candidate ) {
+        count++;
+      }else {
+        count--;
+      }
   };
 
+  return candidate;
 
-  n = n/2;
-
-  for( auto x : mp ){
-
-    if( x.first > n ){
-      return x.second;
-    }
-  }
-};
+}
 
 int main()
 {
@@ -39,5 +67,4 @@ int main()
   majorityElement(nums, n);
 
 
-
-}
+};
