@@ -8,7 +8,8 @@ class Solution{
     string move, vector<vector<int>> &vis){
 
       if( i == n-1 && j = n-1 ){
-        
+        ans.push_back(move);
+        return;
       }
 
   }
