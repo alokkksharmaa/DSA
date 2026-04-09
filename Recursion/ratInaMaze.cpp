@@ -3,9 +3,10 @@ using namespace std;
 
 vector<string> main()
 {
-  long long maze[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1},
+  int maze[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1},
                           {1, 1, 0, 0}, {0, 1, 1, 1}};
 
+  size_t n = sizeof(maze) / sizeof(maze[0][0]); 
   vector<string> ans;
 
   // very simple base case;
@@ -19,6 +20,8 @@ vector<string> main()
 
   int srcx = 0;
   int srcy = 0;
+
+
 
 
 
