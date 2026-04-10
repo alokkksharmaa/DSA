@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// void solve( int maze[][], vector<vector<int>> ans, int n,  ){
+
+//   return ans;
+// }
+
 vector<string> main()
 {
   int maze[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1},
@@ -20,6 +26,10 @@ vector<string> main()
 
   int srcx = 0;
   int srcy = 0;
+
+
+  string path =  " ";
+
 
 
 
