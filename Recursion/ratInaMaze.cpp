@@ -2,10 +2,12 @@
 using namespace std;
 
 
-// void solve( int maze[][], vector<vector<int>> ans, int n,  ){
+void solve( int maze[][], vector<vector<int>> ans, int n,  ){
 
-//   return ans;
-// }
+
+
+
+}
 
 vector<string> main()
 {
