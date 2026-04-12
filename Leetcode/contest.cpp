@@ -2,6 +2,9 @@
 using namespace std;
 
 // leetcode contest 12 Apr, Sunday 2026 
+// 3898. Find the Degree of Each Vertex
+// Input: matrix = [[0,1,0],[1,0,0],[0,0,0]]
+// Output: [1,1,0]
 
 #include <iostream>
 #include <vector>
@@ -28,3 +31,4 @@ public:
       
     }
 };
+
