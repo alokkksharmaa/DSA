@@ -2,9 +2,7 @@
 using namespace std;
 
 
-void solve( int maze[][], vector<vector<int>> ans, int n,  ){
-
-
+void solve( int maze[4][4], vector<vector<int>> ans, int n){
 
 
 }
