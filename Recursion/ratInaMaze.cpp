@@ -1,62 +1,95 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// denotions  int i = srcx, int j = srcy
+/*
+    Function: findPaths
 
-void solve(int i, int j, vector<vector<int>>& a, int n,vector<string> &ans, string move, vector<vector<int>>& vis)
+    Purpose:
+    --------
+    Recursively explores all possible paths from source (0,0)
+    to destination (n-1,n-1) in a grid.
+
+    Movement allowed:
+        D - Down
+        L - Left
+        R - Right
+        U - Up
+
+    Parameters:
+    -----------
+    row          -> current row position
+    col          -> current column position
+    grid         -> input maze matrix (1 = path, 0 = blocked)
+    n            -> size of grid (n x n)
+    paths        -> stores all valid paths
+    currentPath  -> string representing path taken so far
+    visited      -> tracks visited cells to avoid cycles
+*/
+
+void findPaths(int row,int col,vector<vector<int>>& grid,int n,vector<string>& paths,
+               string currentPath,vector<vector<int>>& visited)
 {
+    // Destination reached
+    if (row == n - 1 && col == n - 1)
+    {
+        paths.push_back(currentPath);
+        return;
+    }
 
-  if (i == n - 1 && j == n - 1)
-  {
-    ans.push_back(move);
-    return;
-  }
+    // Mark current cell as visited
+    visited[row][col] = 1;
 
-  vis[i][j] = 1;
-  
+    // Move Down
+    if (row + 1 < n && !visited[row + 1][col] && grid[row + 1][col] == 1){
+      findPaths(row + 1,col,grid,n,paths,currentPath + 'D',visited);
+    }
 
-  // downward
-  if(i+1<n && !vis[i+1][j] && a[i][j] == 1){
-    solve(i+1, j, a, n, ans, move + 'D', vis);
-  }
+    // Move Left
+    if (col - 1 >= 0 && !visited[row][col - 1] && grid[row][col - 1] == 1){
+        findPaths(row,col - 1,grid,n, paths,currentPath + 'L',visited);
+    }
 
-  // left
-  if( j-1 >= 0 && !vis[i][j-1] && a[i][j-1] == 1){
-    solve(i, j-1, a, n, ans, move + 'L', vis);
-  }
+    // Move Right
+    if (col + 1 < n && !visited[row][col + 1] && grid[row][col + 1] == 1){
+        findPaths(row, col + 1,grid,n,paths,currentPath + 'R',visited);
+    }
 
-  // right
-  if( j+1<n && !vis[i][j+1] && a[i][j+1] == 1){
-    solve(i, j+1, a, n, ans, move + 'R', vis);
-  }
-  
+    // Move Up
+    if (row - 1 >= 0 && !visited[row - 1][col] && grid[row - 1][col] == 1){
+        findPaths(row - 1,col,grid,n,paths,currentPath + 'U',visited);     
+    }
 
-  // up
-  if(i-1 >= 0 && !vis[i-1][j] && a[i-1][j] == 1){
-    solve(i-1, j, a, n, ans, move + 'U', vis);
-  }
-
-
-  vis[i][j] = 0;
-
+    // Backtrack
+    visited[row][col] = 0;
 }
 
-vector<string> main()
+int main()
 {
-  int m[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1}, {1, 1, 0, 0}, {0, 1, 1, 1}};
+    vector<vector<int>> grid =
+    {
+        {1, 0, 0, 0},
+        {1, 1, 0, 1},
+        {1, 1, 0, 0},
+        {0, 1, 1, 1}
+    };
 
-  size_t n = sizeof(m) / sizeof(m[0][0]);
-  vector<string> ans;
-  vector<vector<int>> vis(n, vector<int>(n, 0));
+    int n = grid.size();
 
+    vector<string> paths;
 
-  // very simple base case;
-  if (m[0][0] == 1)
-  {
-    solve(0, 0, a, n, ans, "" , vis);
-  };
+    // Visited matrix to prevent revisiting cells
+    vector<vector<int>> visited(n,vector<int>(n, 0));
 
-  
+    // Start only if source is open
+    if (grid[0][0] == 1){
+        findPaths(0,0,grid,n,paths,"",visited);
+    }
 
-  return ans;
+    // Print paths
+    for (auto& path : paths)
+    {
+        cout << path << " " << endl;
+    }
+
+    return 0;
 }
