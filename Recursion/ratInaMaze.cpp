@@ -1,35 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve(int i, int j, int maze[4][4], string path, vector<string> &ans, int n)
+// denotions  int i = srcx, int j = srcy
+
+void solve(int i, int j, vector<vector<int>>& a, int n,vector<string> &ans, string move, vector<vector<int>>& vis)
 {
 
   if (i == n - 1 && j == n - 1)
   {
-    ans.push_back(path);
+    ans.push_back(move);
     return;
   }
+
+  vis[i][j] = 1;
+  
+
+  // downward
+  if(i+1<n && !vis[i+1][j] && a[i][j] == 1){
+    solve(i+1, j, a, n, ans, move + 'D', vis);
+  }
+
+
+
+
+  vis[i][j] = 0;
+
 }
 
 vector<string> main()
 {
-  int maze[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1}, {1, 1, 0, 0}, {0, 1, 1, 1}};
+  int m[4][4] = {{1, 0, 0, 0}, {1, 1, 0, 1}, {1, 1, 0, 0}, {0, 1, 1, 1}};
 
-  size_t n = sizeof(maze) / sizeof(maze[0][0]);
+  size_t n = sizeof(m) / sizeof(m[0][0]);
   vector<string> ans;
+  vector<vector<int>> vis(n, vector<int>(n, 0));
+
 
   // very simple base case;
-  if (maze[0][0] == 0)
+  if (m[0][0] == 1)
   {
-    return ans;
+    solve(0, 0, m , n, ans, "" , vis);
   };
 
-  int visited = 1;
-
-  int srcx = 0;
-  int srcy = 0;
-
-  string path = " ";
+  
 
   return ans;
 }
