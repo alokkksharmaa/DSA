@@ -55,7 +55,7 @@ int majorityElement( int nums[],  int n ){
 
   return candidate;
 
-}
+};
 
 int main()
 {
