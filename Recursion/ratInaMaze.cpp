@@ -27,13 +27,13 @@ using namespace std;
 */
 
 void findPaths(int row, int col, vector<vector<int>> &maze, int n,
-               vector<string> path, string currentPath, vector<vector<int>> &visited)
+               vector<string> &paths, string currentPath, vector<vector<int>> &visited)
 {
 
   // base case
   if (row == n - 1 && col == n - 1)
   {
-    path.push_back(currentPath);
+    paths.push_back(currentPath);
     return;
   }
 
@@ -43,53 +43,56 @@ void findPaths(int row, int col, vector<vector<int>> &maze, int n,
   // move down
   if (row + 1 < n && !visited[row + 1][col] && maze[row + 1][col] == 1)
   {
-    findPaths(row + 1, col, maze, n, path, currentPath + 'D', visited);
+    findPaths(row + 1, col, maze, n, paths, currentPath + 'D', visited);
   }
 
   // right
-  if (col + 1 < n && !visited[row][col + 1] && maze[row][col] == 1)
+  if (col + 1 < n && !visited[row][col + 1] && maze[row][col+1] == 1)
   {
-    findPaths(row, col + 1, maze, n, path, currentPath + 'R', visited);
+    findPaths(row, col + 1, maze, n, paths, currentPath + 'R', visited);
   }
 
   // move left
   if (col - 1 >= 0 && !visited[row][col - 1] && maze[row][col - 1] == 1)
   {
-    findPaths(row, col - 1, maze, n, path, currentPath + 'L', visited);
+    findPaths(row, col - 1, maze, n, paths, currentPath + 'L', visited);
   }
 
   // move up
   if (row - 1 >= 0 && !visited[row - 1][col] && maze[row - 1][col] == 1)
   {
-    findPaths(row - 1, col, maze, n, path, currentPath + 'U', visited);
+    findPaths(row - 1, col, maze, n, paths, currentPath + 'U', visited);
   }
 
-  //
-  visited[row][col] == 0;
+  // backtrack
+  visited[row][col] = 0;
 }
 
 int main()
 {
 
-  vector<vector<int>> maze{
+  vector<vector<int>> maze = {
       {1, 0, 0, 0},
-      {1, 1, 0, 0},
+      {1, 0, 0, 0},
       {1, 1, 0, 0},
       {0, 1, 1, 1},
   };
 
   // determine it's size
-  int n = sizeof(maze) / sizeof(maze[0][0]);
+  int n = maze.size();
 
-  // visited path, another grid of visited
+      // visited path, another grid of visited
   vector<vector<int>> visited(n, vector<int>(n, 0));
 
   vector<string> paths;
 
   if (maze[0][0] == 1)
   {
-    for(auto &path : paths){
-      cout << path << endl;
-    }
+    findPaths(0, 0, maze, n, paths, "", visited);
+  }
+
+  for (auto &path : paths)
+  {
+    cout << path << " " << endl;
   }
 }
