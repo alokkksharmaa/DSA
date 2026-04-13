@@ -26,10 +26,27 @@ using namespace std;
     visited      -> tracks visited cells to avoid cycles
 */
 
-void findPaths
+void findPaths(int row, int col, vector<vector<int>> &maze, int n,
+               vector<string> path, string currentPath,  vector<vector<int>> &visited)
+{
 
-    int
-    main()
+
+  // base case
+  if (row == n - 1 && col == n - 1)
+  {
+    path.push_back(currentPath);
+    return;
+  }
+
+  // mark all the cells as visited
+  visited[row][col] = 1;
+
+
+
+
+}
+
+int main()
 {
 
   vector<vector<int>> maze{
@@ -45,7 +62,7 @@ void findPaths
   // visited path, another grid of visited
   vector<vector<int>> visited(n, vector<int>(n, 0));
 
-  string path;
+  vector<string> paths;
 
   if (maze[0][0] == 1)
   {
