@@ -27,9 +27,8 @@ using namespace std;
 */
 
 void findPaths(int row, int col, vector<vector<int>> &maze, int n,
-               vector<string> path, string currentPath,  vector<vector<int>> &visited)
+               vector<string> path, string currentPath, vector<vector<int>> &visited)
 {
-
 
   // base case
   if (row == n - 1 && col == n - 1)
@@ -41,9 +40,32 @@ void findPaths(int row, int col, vector<vector<int>> &maze, int n,
   // mark all the cells as visited
   visited[row][col] = 1;
 
+  // move down
+  if (row + 1 < n && !visited[row + 1][col] && maze[row + 1][col] == 1)
+  {
+    findPaths(row + 1, col, maze, n, path, currentPath + 'D', visited);
+  }
 
+  // right
+  if (col + 1 < n && !visited[row][col + 1] && maze[row][col] == 1)
+  {
+    findPaths(row, col + 1, maze, n, path, currentPath + 'R', visited);
+  }
 
+  // move left
+  if (col - 1 >= 0 && !visited[row][col - 1] && maze[row][col - 1] == 1)
+  {
+    findPaths(row, col - 1, maze, n, path, currentPath + 'L', visited);
+  }
 
+  // move up
+  if (row - 1 >= 0 && !visited[row - 1][col] && maze[row - 1][col] == 1)
+  {
+    findPaths(row - 1, col, maze, n, path, currentPath + 'U', visited);
+  }
+
+  //
+  visited[row][col] == 0;
 }
 
 int main()
@@ -66,5 +88,8 @@ int main()
 
   if (maze[0][0] == 1)
   {
+    for(auto &path : paths){
+      cout << path << endl;
+    }
   }
 }
