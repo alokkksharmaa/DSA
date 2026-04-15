@@ -6,8 +6,15 @@
 using namespace std;
 
 
-int biSearch(vector<int> arr, int n ){
-  
+int minStepsToTarget(vector<int> arr, int n, int start, int target){
+
+  for(int step=0;step<= n/2; step++){
+    int right = (start + step) % n;
+    int left  = (start - step + n) % n;
+
+    if(arr[right] == target) return step;
+    if(arr[left] == target)  return step;
+  }
 }
 
 int main(){
