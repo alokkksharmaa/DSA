@@ -31,32 +31,23 @@ struct Node
   }
 };
 
-void levelOrder(Node *root)
-{
+void levelOrder(Node* root){
 
-  if (root == nullptr)
-    return;
+  vector<int> result;
 
-  queue<Node*> q;
+  if(!root)  return result;
+
+  queue<int> q;
   q.push(root);
 
-  while (!q.empty())
-  {
-    Node *curr = q.front();
-    q.pop();
+  while(!q.empty()){
 
-    cout << curr->data << " ";
+    Node* curr = q.front();
+    
 
-    if (curr->left != nullptr)
-    {
-      q.push(curr->left);
-    }
-
-    if (curr->right != nullptr)
-    {
-      q.push(curr->right);
-    }
   }
+
+
 };
 
 int main()
