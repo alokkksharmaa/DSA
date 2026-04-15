@@ -37,7 +37,7 @@ void levelOrder(Node *root)
   if (root == nullptr)
     return;
 
-  queue<Node *> q;
+  queue<Node*> q;
   q.push(root);
 
   while (!q.empty())
