@@ -20,15 +20,10 @@ public:
 int heightofTree(Node *root)
 {
 
-  if (root == nullptr)
-  {
-    return 0;
-  };
+  if( root == nullptr )  return 0;
 
-  int leftHeight = heightofTree(root->left);
-  int rightHeight = heightofTree(root->right);
-
-  return 1 + max(leftHeight, rightHeight);
+  return 1 + max( heightofTree(root -> left), 
+                  heightofTree(root -> right ));
 }
 
 int main()
