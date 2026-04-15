@@ -31,24 +31,30 @@ struct Node
   }
 };
 
-void levelOrder(Node* root){
+vector<int> levelOrder(Node *root)
+{
 
-  vector<int> result;
+  vector<int> res;
+  if (!root) return res;
 
-  if(!root)  return result;
-
-  queue<int> q;
+  queue<Node*> q;
   q.push(root);
 
   while(!q.empty()){
+    int levelSize = q.size();
+    vector<int> level;
 
-    Node* curr = q.front();
-    
+    for(int i=0;i<levelSize; i++){
+      Node* curr = q.front();
+      q.pop();
+
+      
+    }
+
 
   }
 
-
-};
+}
 
 int main()
 {
