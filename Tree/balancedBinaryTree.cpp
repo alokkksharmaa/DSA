@@ -19,9 +19,16 @@ bool isBalanced(Node* root){
 }
   int dfsHeight(Node* root){
 
-    
+    int leftHeight = dfsHeight(root -> left);
+    if(leftHeight == -1) return -1;
+    int rightHeight = dfsHeight(root -> right);
+    if(rightHeight == -1)  return -1;
 
-  }
+    if(abs(leftHeight - rightHeight) >1) return -1;
+
+    return max(leftHeight, rightHeight) + 1;
+
+}
 
 
 int main()
@@ -36,6 +43,11 @@ int main()
   root->right->right = new Node(5);
   root->right->left = new Node(6);
 
+  if(!isBalanced(root)){
+    cout << "Tree is balanced" << endl;
+  }else{
+    cout << "Tree is not balanced";
+  }
     
   return 0;
 }
