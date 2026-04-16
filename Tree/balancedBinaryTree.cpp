@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -13,23 +14,27 @@ struct Node {
   }
 };
 
+int dfsHeight(Node* root){
+
+  // base case
+  if(root ==  nullptr) return 0;
+
+  int leftHeight = dfsHeight(root -> left);
+  if(leftHeight == -1) return -1;
+  int rightHeight = dfsHeight(root -> right);
+  if(rightHeight == -1)  return -1;
+
+  if(abs(leftHeight - rightHeight) >1) return -1;
+
+  return max(leftHeight, rightHeight) + 1;
+
+}
+
 bool isBalanced(Node* root){
 
   return dfsHeight(root) != -1;
 }
-  int dfsHeight(Node* root){
-
-    int leftHeight = dfsHeight(root -> left);
-    if(leftHeight == -1) return -1;
-    int rightHeight = dfsHeight(root -> right);
-    if(rightHeight == -1)  return -1;
-
-    if(abs(leftHeight - rightHeight) >1) return -1;
-
-    return max(leftHeight, rightHeight) + 1;
-
-}
-
+ 
 
 int main()
 {
@@ -44,9 +49,9 @@ int main()
   root->right->left = new Node(6);
 
   if(!isBalanced(root)){
-    cout << "Tree is balanced" << endl;
+    cout << "Tree is not balanced" << endl;
   }else{
-    cout << "Tree is not balanced";
+    cout << "Tree is balanced!!";
   }
     
   return 0;
