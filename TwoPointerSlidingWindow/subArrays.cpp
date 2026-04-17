@@ -7,13 +7,14 @@ int main()
   int n = sizeof(arr)/sizeof(arr[0]);
 
   for(int i=0;i<n;i++){
-    string sub = "";
-    for(int j=i;j<n;j++){
-      sub += to_string(arr[j]) + " "; 
-      cout <<sub << endl;
-    }
+    string str = " ";
+    for(int j = i; j<n; j++){
+      for(int k = i; k<=j;k++){
+        cout << arr[k] << " ";
+      }
+      cout << endl;
+    }  
     cout << endl;
   }
-    
   return 0;
 }
