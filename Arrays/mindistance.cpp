@@ -23,15 +23,15 @@ int maxDistance(vector<int> &nums1, vector<int> &nums2)
   }
 
   return ans;
-}
-}
-;
+};
 
 int main()
 {
 
   vector<int> nums1 = {55, 30, 5, 4, 2};
   vector<int> nums2 = {100, 20, 10, 10, 5};
+
+  maxDistance(nums1, nums2);
 
   return 0;
 }
